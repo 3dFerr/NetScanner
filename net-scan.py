@@ -9,7 +9,12 @@ def scan(ip):
     # combine arp request and broadcast packet
     arp_request_broadcast = broadcast/arp_request
     #arp_request_broadcast.show()
-    answered, unanswered = scapy.srp(arp_request_broadcast, timeout=1)
-    print(answered.summary())
+    answered_list = scapy.srp(arp_request_broadcast, timeout=1)[0]
+    
+    for element in answered_list:
+        print(f'ip source: {element[1].psrc}')
+        print(f'mac source: {element[1].hwsrc}')
+        print("-------------------------------------------------------------------------------------------")
+    
 
 print(scan("10.0.2.1/24"))
