@@ -1,5 +1,6 @@
 # NetScanner
-### A simple program to scan a network
+### A simple program to scan a network.
+[this program is for learning purposes]
 
 - When run the program pass an IP Range as argument
 
